@@ -14,7 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dbConnect = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
-const URL = "mongodb://0.0.0.0:27017/TaskDB";
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const URL = process.env.MONGO_STRING;
 const dbConnect = () => __awaiter(void 0, void 0, void 0, function* () {
     mongoose_1.default.connect(URL).then(() => {
         console.log("Connected to database");

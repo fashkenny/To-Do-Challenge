@@ -1,11 +1,14 @@
 import express, { Application } from "express"
 import { dbConnect } from "./config/db";
 import { mainApp } from "./mainApp";
+import env from "dotenv"
+env.config()
 
 
 
 
-const port: number = 4020;
+
+const port: number = parseInt(process.env.PORT!);
 const app: Application = express();
 
 mainApp(app);

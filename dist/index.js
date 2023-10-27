@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const db_1 = require("./config/db");
 const mainApp_1 = require("./mainApp");
-const port = 4020;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const port = parseInt(process.env.PORT);
 const app = (0, express_1.default)();
 (0, mainApp_1.mainApp)(app);
 const server = app.listen(port, () => {
