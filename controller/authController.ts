@@ -1,3 +1,4 @@
+
 import express, { Request, Response } from "express";
 import authModel from "../model/authModel";
 import bcrypt from "bcrypt";
